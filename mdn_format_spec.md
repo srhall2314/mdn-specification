@@ -1,8 +1,8 @@
 # MDN Format Specification  
 **Markdown Numbers (.mdn) - AI-Optimized Spreadsheet Format**
 
-Version: 1.0  
-Created: January 2025  
+Version: 0.8.0  
+Created: August 2025  
 Purpose: Token-efficient spreadsheet format preserving business logic  
 
 ## Overview
