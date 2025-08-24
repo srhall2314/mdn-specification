@@ -50,3 +50,26 @@ END DOCUMENT
 ```
 
 Note: The YAML header section can include optional context fields such as `purpose`, `keyMetrics`, `businessRules`, and others, which parsers may choose to ignore.
+
+## AI Prompt Integration
+
+The MDN format supports an optional AI prompt section to help AI systems understand the format when they encounter it for the first time. This feature is documented in two complementary files:
+
+### `mdn_structure_ai_prompt.md`
+Contains the AI prompt section that can be included at the bottom of MDN files to explain the format to AI systems. This section is optional and can be removed once the MDN format becomes widely known.
+
+### `mdn_ai_prompt_implementation.md`
+Provides implementation options and token efficiency strategies for the AI prompt section, including different levels of detail from comprehensive to ultra-minimal approaches.
+
+## Documentation Files
+
+- **`mdn_format_spec.md`** - Complete format specification
+- **`mdn_structure_ai_prompt.md`** - AI prompt section for inclusion in MDN files
+- **`mdn_ai_prompt_implementation.md`** - Implementation options and token efficiency strategies
+- **`mdn_parser.py`** - Python parser implementation
+- **`mdn_converter.py`** - Excel to MDN conversion tool
+- **`excel_parser.py`** - Excel file parsing utilities
+- **`utils.py`** - Common utility functions
+- **`requirements.txt`** - Python dependencies
+- **`examples/`** - Sample MDN files and usage examples
+- **`test_files/`** - Test data files
