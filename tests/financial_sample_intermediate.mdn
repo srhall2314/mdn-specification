@@ -1,0 +1,38 @@
+--- MDN:HEADER YAML
+source: financial_sample.xlsx
+version: '1.0'
+created: '2025-08-22T19:55:13Z'
+sheets:
+- Revenue
+- Costs
+
+---
+# optional context section
+purpose: excel_to_mdn_conversion
+keyMetrics:
+- data_integrity
+- formula_preservation
+businessRules:
+- All formulas must be preserved
+- Data types maintained through formatting
+- Sheet structure preserved
+
+---
+--- MDN:SHEET CSV name=Revenue
+Month,Sales,Growth,Forecast
+Jan,10000,0.05,=B2*(1+C2)
+Feb,10500,0.05,=B3*(1+C3)
+---
+--- MDN:SHEET CSV name=Costs
+Category,Fixed,Variable,Total
+Dev,5000,2000,=B2+C2
+Marketing,3000,1500,=B3+C3
+---
+--- MDN:FORMULAS JSON
+Revenue!D2: =B2*(1+C2)
+Revenue!D3: =B3*(1+C3)
+Costs!D2: =B2+C2
+Costs!D3: =B3+C3
+
+---
+END DOCUMENT

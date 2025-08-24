@@ -61,15 +61,53 @@ Contains the AI prompt section that can be included at the bottom of MDN files t
 ### `mdn_ai_prompt_implementation.md`
 Provides implementation options and token efficiency strategies for the AI prompt section, including different levels of detail from comprehensive to ultra-minimal approaches.
 
-## Documentation Files
+## Repository Structure
 
-- **`mdn_format_spec.md`** - Complete format specification
-- **`mdn_structure_ai_prompt.md`** - AI prompt section for inclusion in MDN files
-- **`mdn_ai_prompt_implementation.md`** - Implementation options and token efficiency strategies
-- **`mdn_parser.py`** - Python parser implementation
-- **`mdn_converter.py`** - Excel to MDN conversion tool
-- **`excel_parser.py`** - Excel file parsing utilities
-- **`utils.py`** - Common utility functions
-- **`requirements.txt`** - Python dependencies
-- **`examples/`** - Sample MDN files and usage examples
-- **`test_files/`** - Test data files
+```
+mdn/
+├── docs/                    # Documentation
+│   ├── specification/       # Format specification
+│   ├── guides/             # Implementation guides
+│   └── examples/           # Example files
+├── tools/                  # Implementation tools
+│   └── python/            # Python tools and utilities
+├── tests/                  # Test files and data
+└── README.md              # This file
+```
+
+## Documentation
+
+- **[Specification](docs/specification/)** - Complete format specification and AI prompt structure
+- **[Implementation Guides](docs/guides/)** - Practical guides for using MDN
+- **[Examples](docs/examples/)** - Sample files and usage patterns
+- **[Tools](tools/)** - Validation, parsing, and conversion utilities
+- **[Tests](tests/)** - Test files and validation data
+
+## Validation
+
+The MDN format includes a comprehensive validation tool ([`tools/python/mdn_validator.py`](tools/python/mdn_validator.py)) that ensures files comply with the specification:
+
+### What It Validates
+- **Required Sections**: YAML header, CSV sheets, JSON formulas
+- **Optional Sections**: Format JSON, AI prompt
+- **Section Order**: Ensures proper sequence
+- **Syntax**: Validates YAML, JSON, and CSV syntax
+- **Content**: Checks for required fields and data integrity
+
+### Usage
+```bash
+cd tools/python
+python3 mdn_validator.py <mdn_file>
+```
+
+### Example Output
+```
+MDN Validation Results for: example.mdn
+==================================================
+✅ File is VALID
+
+Sections found: MDN:HEADER YAML, MDN:SHEET CSV, MDN:FORMULAS JSON
+Sheet names: Budget, Forecast
+```
+
+The validator provides detailed error messages and warnings to help identify and fix format issues.
